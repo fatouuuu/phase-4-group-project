@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  title: MyString
+  minutes_to_prepare: 1
+  instructions: MyText
+
+two:
+  user: two
+  title: MyString
+  minutes_to_prepare: 1
+  instructions: MyText
