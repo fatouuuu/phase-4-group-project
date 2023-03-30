@@ -16,4 +16,11 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/me', to: 'sessions#user_session'
+
+  # recipes
+  post '/recipes', to: 'recipes#create'
+  patch '/recipes/:id', to: 'recipes#update'
+  delete '/recipes/:id', to: 'recipes#destroy'
+  get '/recipes', to: 'recipes#index'
+  get '/recipes/:id', to: 'recipes#show'
 end
