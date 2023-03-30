@@ -9,13 +9,29 @@ class UsersController < ApplicationController
     end
   end
 
+  # PUT /users/:id
   def update
+    user = User.find(params[:id])
+    if user.update(user_params)
+      app_response(message: "User updated successfully", status: :ok, data: user)
+    else
+      app_response(message: "Unable to update user", status: :unprocessable_entity, data: user.errors.full_messages)
+    end
+  end
+ 
   end
 
+  # DELETE /users/:id
   def destroy
+    user = User.find(params[:id])
+    user.destroy
+    app_response(message: "User deleted successfully", status: :ok, data: user)
   end
 
+  # GET /users/:id
   def show
+    user = User.find(params[:id])
+    app_response(message: "User found", status: :ok, data: user)
   end
 
   private
