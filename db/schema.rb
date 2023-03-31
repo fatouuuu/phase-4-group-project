@@ -33,7 +33,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_30_100305) do
     t.string "title"
     t.integer "minutes_to_prepare"
     t.text "instructions"
-    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_recipes_on_user_id"
