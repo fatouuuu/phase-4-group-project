@@ -1,5 +1,106 @@
+
 .App {
   text-align: center;
 }
+landing page -section1
 
 
+.Landing {
+  background: #F5F5F5;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 88px;
+  position: relative;
+  width: 1223px;
+  height: 568px;
+
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 0;
+  width: 635px;
+  height: 114px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 57px;
+  color: #000000;
+
+}
+h3 {
+  font-size: 24px;
+  margin-top: 0;
+  width: 635px;
+  height: 114px;
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 57px;
+  color: #000000;
+
+}
+
+
+.paragraph {
+  line-height: 1.5;
+  margin-bottom: 20px;
+  width: 601px;
+  height: 90px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  color: rgba(18, 16, 61, 0.8);
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+
+}
+
+.btn-1 {
+  background: #FF4A22;
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  padding: 10px 50px;
+  gap: 10px;
+  width: 158px;
+  height: 41px;
+
+}
+
+.btn-2 {
+  background: rgba(255, 74, 34, 0.15);
+  border: none;
+  border-radius: 20px;
+  color: #FF4A22;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  padding: 10px 50px;
+  gap: 10px;
+  width: 158px;
+  height: 41px;
+
+}
+
+.img {
+  width: 373px;
+  height: 424px;
+  /* background: url(image.png); */
+  border-radius: 20px;
+  float: right;
+  margin-top: -400px;
+
+
+}
