@@ -109,6 +109,7 @@ code {
   bottom: 1rem;
   right: 2rem;
   font-size: 13px;
+  color: #FF4A22;
 }
 
 .photo--tag a{
@@ -129,4 +130,14 @@ code {
 
 .auth--redirect:hover {
   transform: scale(0.9);
+}
+
+.auth-forgot-pass {
+  font-size: 13px;
+}
+
+.auth-forgot-pass a {
+  text-decoration: underline;
+  color: #FF4A22;
+  cursor: pointer;  
 }
