@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Register from './components/Register';
 
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Define your routes here */}
-        
+        <Route path='register' element={<Register />} />
         
       </Routes>
     </BrowserRouter>
