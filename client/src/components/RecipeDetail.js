@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 function RecipeDetail() {
@@ -17,29 +17,25 @@ function RecipeDetail() {
     console.log("Added to Dashboard:", recipe.title);
   };
 
+  
+
   return (
     <div>
       {recipe ? (
         <div>
+          <img src={recipe.image_url} alt='recipe_image'/>
           <h2>{recipe.title}</h2>
           <p>
-            <em>Preparation Time: {recipe.preparation_time} minutes</em>
-            &nbsp;·&nbsp;
-            <cite>By {recipe.user.username}</cite>
+            <em>Preparation Time: {recipe.minutes_to_prepare} minutes</em>
+           
           </p>
-          <p>{recipe.description}</p>
-          <h3>Ingredients:</h3>
-          <ul>
-            {recipe.ingredients.map((ingredient) => (
-              <li key={ingredient}>{ingredient}</li>
-            ))}
-          </ul>
-          <h3>Instructions:</h3>
-          <ol>
-            {recipe.instructions.map((instruction) => (
-              <li key={instruction}>{instruction}</li>
-            ))}
-          </ol>
+          
+          
+            <div>
+              <h3>Instructions:</h3>
+              {recipe.instructions.split('.').map(instruction => <li>{instruction}</li>)}
+            </div>
+         
           <button onClick={handleAddToDashboard}>Add to Dashboard</button>
         </div>
       ) : (
@@ -52,3 +48,4 @@ function RecipeDetail() {
 }
 
 export default RecipeDetail;
+
