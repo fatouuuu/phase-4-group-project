@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 function App() {
@@ -8,10 +8,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Define your routes here */}
+        
+        
       </Routes>
   </BrowserRouter>
   );
 }
 
-
-export default App
+export default App;
