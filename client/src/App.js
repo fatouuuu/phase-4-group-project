@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
 import Protected from './utils/Protected';
+
 
 
 function App() {
@@ -35,6 +37,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Define your routes here */}
+
         <Route path='register' element={<Register />} />
         <Route path='login' element={<Login onLogin={handleLogin} />} />
         <Route path='home' element={
@@ -43,6 +46,7 @@ function App() {
         </Protected>
         } />
         
+
       </Routes>
   </BrowserRouter>
   );
