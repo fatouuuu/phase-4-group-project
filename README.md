@@ -51,4 +51,4 @@ Bon Appetit was built using the following technologies:
   
 ## Conclusion
 
-We hope you enjoy using Bon Appetit as much as we enjoyed building it! If you have any feedback or suggestions for improvement, please don't hesitate to reach out to us. Thanks for checking out our application!
+We hope you enjoy using Bon Appetit as much as we enjoyed building it! If you have any feedback or suggestions for improvement, please don't hesitate to reach out to us. Thanks for checking out our application.
