@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import "../Navbar.css"
+import logo from '../assets/images/bon-appetit.svg'
 
 
 
@@ -8,7 +9,7 @@ function Navbar() {
     return (
         <nav>
         <Link to="/">
-          <h2>Bon Appétit</h2>
+          <img src={logo} alt='logo' />
         </Link>
         <ul>
         <li>
