@@ -5,6 +5,11 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
 import Protected from './utils/Protected';
+import RecipeList from './components/RecipeList';
+import RecipeDetail from './components/RecipeDetail';
+import UserProfile from './components/UserProfile';
+import LandingPage from './components/LandingPage';
+
 
 
 
@@ -38,6 +43,7 @@ function App() {
       <Routes>
         {/* Define your routes here */}
 
+        <Route path='/' element={<LandingPage />} />
         <Route path='register' element={<Register />} />
         <Route path='login' element={<Login onLogin={handleLogin} />} />
         <Route path='home' element={
@@ -46,6 +52,23 @@ function App() {
         </Protected>
         } />
         
+        <Route path="/recipes" element={
+          <Protected>
+            <RecipeList />
+          </Protected>
+        } />    
+        
+        <Route path="/profile" element={
+          <Protected>
+            <UserProfile />
+          </Protected>
+        } />
+
+        <Route path="/recipes/:id" element={
+          <Protected>
+            <RecipeDetail />
+          </Protected>
+        } />
 
       </Routes>
   </BrowserRouter>

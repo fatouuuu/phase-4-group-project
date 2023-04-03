@@ -1,13 +1,16 @@
 
 import React, { useEffect, useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
+import logo from '../assets/images/bon-appetit.svg'
+import '../App.css'
+
 
 function Navbar() {
   return (
-    <nav>
+    <nav className="nav">
       <ul>
         <li>
-          <span className="app-name">Bon Appetit</span>
+        <img className='logo' src={logo}  alt='bon appetite logo'/>
         </li>
         <li>
           <NavLink exact to="/" activeClassName="active">
@@ -71,46 +74,57 @@ function Home({ user }) {
     <>
       <Navbar />
       <div className="featured-recipes">
-        <h2>Featured Recipes</h2>
+        <h2 className="featured-heading">Featured Recipes</h2>
         <ul>
-          {featuredRecipes.map((recipe) => (
-            <li key={recipe.id}>
-              <h3>{recipe.title}</h3>
-            </li>
-          ))}
+        {featuredRecipes.slice(0, 2).map((recipe) => (
+          <li key={recipe.id}>
+            <h3 className="featured-title">{recipe.title}</h3>
+            <p className="featured-time">Prep Time: {recipe.minutes_to_prepare} minutes</p>
+            <p className="featured-instructions">{recipe.instructions}</p>
+          </li>
+        ))}
         </ul>
         <NavLink to="/recipes">See All Recipes</NavLink>
       </div>
       <div className="create-recipe">
         <h2>Create Recipe</h2>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="title">Title</label>
-          <input
-            type="text"
-            id="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Recipe Name"
-          />
-          <label htmlFor="minutesToPrepare">Preparation Time</label>
-          <input
-            type="number"
-            id="minutesToPrepare"
-            value={minutesToPrepare}
-            onChange={(e) => setminutesToPrepare(e.target.value)}
-          />
-          <label htmlFor="instructions">Instructions</label>
-          <textarea
-            id="instructions"
-            rows="10"
-            value={instructions}
-            onChange={(e) => setInstructions(e.target.value)}
-          />
-          <button color="primary" type="submit">
-            {isLoading ? "Loading..." : "Submit Recipe"}
-          </button>
+         <div className="form-row">
+           <label htmlFor="recipe-title">Title</label>
+            <input
+              type="text"
+              id="recipe-title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Recipe Name"
+            />
+          </div>
+          <div className="form-row">
+            <label htmlFor="prep-time">Preparation Time</label>
+            <input
+              type="number"
+              id="prep-time"
+              value={minutesToPrepare}
+              onChange={(e) => setminutesToPrepare(e.target.value)}
+            />
+          </div>
+          <div className="form-row">
+            <label htmlFor="instructions">Instructions</label>
+            <textarea
+              id="instructions"
+              rows="10"
+              value={instructions}
+              onChange={(e) => setInstructions(e.target.value)}
+            />
+          </div>
+          <div className="form-row">
+            <button color="primary" type="submit">
+              {isLoading ? "Loading..." : "Submit Recipe"}
+            </button>
+          </div>
         </form>
       </div>
+
     </>
   );
 }

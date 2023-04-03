@@ -12,27 +12,25 @@ function RecipeList() {
   }, []);
 
   return (
+    <div className="recipes-list">
+  {recipes.length > 0 ? (
+    recipes.map((recipe) => (
+      <div className="recipe-item" key={recipe.id}>
+        <h2 className="recipe-title">{recipe.title}</h2>
+        <p className="recipe-prep-time">
+          <em>Preparation Time: {recipe.minutes_to_prepare} minutes</em>
+        </p>
+        <p className="recipe-description">{recipe.description}</p>
+        <Link className="check-recipe-link" to={`/recipes/${recipe.id}`}>Check Recipe</Link>
+      </div>
+    ))
+  ) : (
     <div>
-      {recipes.length > 0 ? (
-        recipes.map((recipe) => (
-          <div key={recipe.id}>
-            <h2>{recipe.title}</h2>
-            <p>
-              <em>Preparation Time: {recipe.minutes_to_prepare} minutes</em>
-            
-              </p>
-            <p>{recipe.description}</p>
-            <Link to={`/recipes/${recipe.id}`}>Check Recipe</Link>
-          </div>
-        ))
-      ) : (
-        <div>
-          <h2>No Recipes Found</h2>
-          <Link to="/new">Create a New Recipe</Link>
-        </div>
-        
-      )}
+      <h2>No Recipes Found</h2>
+      <Link to="/new">Create a New Recipe</Link>
     </div>
+  )}
+</div>
   );
 }
 

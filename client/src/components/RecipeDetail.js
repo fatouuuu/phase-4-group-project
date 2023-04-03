@@ -20,30 +20,28 @@ function RecipeDetail() {
   
 
   return (
-    <div>
-      {recipe ? (
-        <div>
-          <img src={recipe.image_url} alt='recipe_image'/>
-          <h2>{recipe.title}</h2>
-          <p>
-            <em>Preparation Time: {recipe.minutes_to_prepare} minutes</em>
-           
-          </p>
-          
-          
-            <div>
-              <h3>Instructions:</h3>
-              {recipe.instructions.split('.').map(instruction => <li>{instruction}</li>)}
-            </div>
-         
-          <button onClick={handleAddToDashboard}>Add to Dashboard</button>
-        </div>
-      ) : (
-        <div>
-          <h2>Recipe Not Found</h2>
-        </div>
-      )}
+    <div className="recipe-container">
+  {recipe ? (
+    <div className="recipe-card">
+      <img className="recipe-image" src={recipe.image_url} alt="recipe_image" />
+      <h2 className="recipe-title">{recipe.title}</h2>
+      <p className="recipe-prep-time">
+        <em>Preparation Time: {recipe.minutes_to_prepare} minutes</em>
+      </p>
+      <div className="recipe-instructions">
+        <h3>Instructions:</h3>
+        <ul>{recipe.instructions.split(',').map((instruction, index) => <li key={index}>{instruction}</li>)}</ul>
+      </div>
+      <button className="add-to-dashboard-btn" onClick={handleAddToDashboard}>Add to Dashboard</button>
     </div>
+  ) : (
+    <div>
+      <h2>Recipe Not Found</h2>
+    </div>
+  )}
+</div>
+
+
   );
 }
 
