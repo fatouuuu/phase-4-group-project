@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Navbar({ handleLogoutClick }) {
   return (
@@ -27,6 +27,7 @@ function Navbar({ handleLogoutClick }) {
 
 function UserProfile({ userId, setUser }) {
   const [user, setUserDetails] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`/user/${userId}`)
@@ -35,11 +36,8 @@ function UserProfile({ userId, setUser }) {
   }, [userId]);
 
   function handleLogoutClick() {
-    fetch("/logout", { method: "DELETE" }).then((r) => {
-      if (r.ok) {
-        setUser(null);
-      }
-    });
+    fetch("/logout", { method: "DELETE" })
+    navigate('/login')
   }
 
   return (

@@ -7,7 +7,7 @@ import "../landing.css";
 
 function LandingPage() {
   return (
-    <React.Fragment>
+    
 
       <div className="landing--container">
       <Navbar />
@@ -35,7 +35,7 @@ function LandingPage() {
         </div>
       </div>
       </div>
-    </React.Fragment>
+    
   );
 }
 
